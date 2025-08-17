@@ -1,4 +1,4 @@
-# Inbox API
+#  Messages API (Inbox)
 
 A Rails API that accepts inbound messages, classifies them **asynchronously** via a simulated “LLM API,” retries on transient failures, and exposes results.
 
