@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyString
+  sender: MyString
+  body: MyText
+  status: 1
+  classification: 1
+  classification_attempts: 1
+  last_error: MyText
+  classified_at: 2025-08-17 09:04:08
+
+two:
+  subject: MyString
+  sender: MyString
+  body: MyText
+  status: 1
+  classification: 1
+  classification_attempts: 1
+  last_error: MyText
+  classified_at: 2025-08-17 09:04:08
