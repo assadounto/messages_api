@@ -5,8 +5,8 @@ class CreateMessages < ActiveRecord::Migration[7.2]
       t.string  :sender,   null: false
       t.text    :body,     null: false
 
-      t.integer :status,                null: false, default: 0  
-      t.integer :classification                                 
+      t.integer :status,                null: false, default: 0
+      t.integer :classification
 
       t.integer :classification_attempts, null: false, default: 0
       t.text    :last_error

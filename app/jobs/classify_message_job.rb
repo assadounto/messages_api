@@ -17,14 +17,14 @@ class ClassifyMessageJob < ApplicationJob
       )
 
       message.update!(
-        classification: result,        
+        classification: result,
         status: :classified,
         classified_at: Time.current,
         last_error: nil
       )
     rescue ExternalLlmClient::TransientError => e
       if message.classification_attempts < MAX_ATTEMPTS
-      
+
         message.update!(last_error: e.message)
         self.class.set(wait: backoff_for(message.classification_attempts))
                   .perform_later(message.id)
@@ -37,6 +37,6 @@ class ClassifyMessageJob < ApplicationJob
   private
 
   def backoff_for(attempt)
-    [5, 15, 30][attempt - 1].seconds
+    [ 5, 15, 30 ][attempt - 1].seconds
   end
 end

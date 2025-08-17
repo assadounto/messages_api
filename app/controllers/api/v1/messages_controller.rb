@@ -2,8 +2,7 @@
 module Api
   module V1
     class MessagesController < ApplicationController
-    
-     # POST /api/v1/messages
+      # POST /api/v1/messages
       def create
         message = Message.create!(message_params)
         ClassifyMessageJob.perform_later(message.id)
@@ -28,9 +27,9 @@ module Api
           subject: m.subject,
           sender: m.sender,
           body: m.body,
-          status: m.status,                         
-          classification: m.classification,         
-          attempts: m.classification_attempts,      
+          status: m.status,
+          classification: m.classification,
+          attempts: m.classification_attempts,
           last_error: m.last_error,
           classified_at: m.classified_at,
           created_at: m.created_at
